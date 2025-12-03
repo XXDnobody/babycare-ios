@@ -1,0 +1,138 @@
+{
+  "": {
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/master.swiftdeps"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/App/BabyCareApp.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/BabyCareApp.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/BabyCareApp.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/BabyCareApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/BabyCareApp.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/BabyCareApp.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/App/MainTabView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MainTabView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MainTabView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MainTabView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MainTabView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MainTabView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Models/Models.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/Models.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/Models.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/Models~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/Models.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/Models.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Utils/DesignSystem.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DesignSystem.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DesignSystem.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DesignSystem~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DesignSystem.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DesignSystem.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Baby/AddBabyView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/AddBabyView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/AddBabyView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/AddBabyView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/AddBabyView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/AddBabyView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Dashboard/DashboardView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DashboardView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DashboardView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DashboardView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DashboardView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DashboardView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Dashboard/FeedingAnalysisView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FeedingAnalysisView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FeedingAnalysisView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FeedingAnalysisView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FeedingAnalysisView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FeedingAnalysisView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Dashboard/GrowthCurveView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/GrowthCurveView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/GrowthCurveView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/GrowthCurveView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/GrowthCurveView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/GrowthCurveView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Dashboard/InsightsView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/InsightsView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/InsightsView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/InsightsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/InsightsView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/InsightsView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Dashboard/SleepAnalysisView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepAnalysisView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepAnalysisView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepAnalysisView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepAnalysisView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepAnalysisView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Home/DiaperRecordSheet.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DiaperRecordSheet.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DiaperRecordSheet.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DiaperRecordSheet~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DiaperRecordSheet.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/DiaperRecordSheet.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Home/FoodRecordSheet.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FoodRecordSheet.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FoodRecordSheet.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FoodRecordSheet~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FoodRecordSheet.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/FoodRecordSheet.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Home/HomeView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/HomeView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/HomeView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/HomeView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/HomeView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/HomeView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Home/MilkRecordSheet.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MilkRecordSheet.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MilkRecordSheet.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MilkRecordSheet~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MilkRecordSheet.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/MilkRecordSheet.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Home/OnboardingView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/OnboardingView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/OnboardingView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/OnboardingView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/OnboardingView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/OnboardingView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Home/SleepRecordSheet.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepRecordSheet.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepRecordSheet.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepRecordSheet~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepRecordSheet.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/SleepRecordSheet.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Profile/ProfileView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ProfileView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ProfileView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ProfileView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ProfileView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ProfileView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Report/ReportUploadView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ReportUploadView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ReportUploadView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ReportUploadView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ReportUploadView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ReportUploadView.dia"
+  },
+  "/Users/xxd/dev/workspace/babycare-ios/BabyCare/Sources/Views/Schedule/ScheduleView.swift": {
+    "dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ScheduleView.d",
+    "object": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ScheduleView.swift.o",
+    "swiftmodule": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ScheduleView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ScheduleView.swiftdeps",
+    "diagnostics": "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/ScheduleView.dia"
+  }
+}

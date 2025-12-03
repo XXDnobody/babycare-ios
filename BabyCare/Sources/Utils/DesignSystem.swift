@@ -26,6 +26,7 @@ extension Color {
     static let textSecondary = Color(hex: "4A4A4A")
     static let textTertiary = Color(hex: "9E9E9E")
     static let borderColor = Color(hex: "E0E0E0")
+    static let borderGray = Color(hex: "E0E0E0")
     static let backgroundGray = Color(hex: "F5F5F5")
     
     // Hex initializer
@@ -157,13 +158,31 @@ struct SecondaryButtonStyle: ButtonStyle {
 struct QuickActionButton: View {
     let emoji: String
     let title: String
+    let isVIP: Bool
     let action: () -> Void
+    
+    init(emoji: String, title: String, isVIP: Bool = false, action: @escaping () -> Void) {
+        self.emoji = emoji
+        self.title = title
+        self.isVIP = isVIP
+        self.action = action
+    }
     
     var body: some View {
         Button(action: action) {
             VStack(spacing: AppSpacing.sm) {
-                Text(emoji)
-                    .font(.system(size: 28))
+                ZStack(alignment: .topTrailing) {
+                    Text(emoji)
+                        .font(.system(size: 28))
+                    
+                    if isVIP {
+                        Image(systemName: "crown.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(.warningYellow)
+                            .offset(x: 8, y: -8)
+                    }
+                }
+                
                 Text(title)
                     .font(AppFont.caption())
                     .foregroundColor(.textSecondary)

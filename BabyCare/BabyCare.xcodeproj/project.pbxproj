@@ -24,6 +24,10 @@
 		E10000001000000000000015 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000015 /* ProfileView.swift */; };
 		E10000001000000000000016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000016 /* Assets.xcassets */; };
 		E10000001000000000000017 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000017 /* Preview Assets.xcassets */; };
+		E10000001000000000000018 /* MilkRecordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000018 /* MilkRecordSheet.swift */; };
+		E10000001000000000000019 /* FoodRecordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000019 /* FoodRecordSheet.swift */; };
+		E10000001000000000000020 /* SleepRecordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000020 /* SleepRecordSheet.swift */; };
+		E10000001000000000000021 /* DiaperRecordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000002000000000000021 /* DiaperRecordSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		E10000002000000000000015 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E10000002000000000000016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E10000002000000000000017 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E10000002000000000000018 /* MilkRecordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilkRecordSheet.swift; sourceTree = "<group>"; };
+		E10000002000000000000019 /* FoodRecordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRecordSheet.swift; sourceTree = "<group>"; };
+		E10000002000000000000020 /* SleepRecordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRecordSheet.swift; sourceTree = "<group>"; };
+		E10000002000000000000021 /* DiaperRecordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperRecordSheet.swift; sourceTree = "<group>"; };
 		E10000003000000000000001 /* BabyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -121,6 +129,10 @@
 			children = (
 				E10000002000000000000005 /* HomeView.swift */,
 				E10000002000000000000006 /* OnboardingView.swift */,
+				E10000002000000000000018 /* MilkRecordSheet.swift */,
+				E10000002000000000000019 /* FoodRecordSheet.swift */,
+				E10000002000000000000020 /* SleepRecordSheet.swift */,
+				E10000002000000000000021 /* DiaperRecordSheet.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -280,6 +292,10 @@
 				E10000001000000000000013 /* SleepAnalysisView.swift in Sources */,
 				E10000001000000000000014 /* InsightsView.swift in Sources */,
 				E10000001000000000000015 /* ProfileView.swift in Sources */,
+				E10000001000000000000018 /* MilkRecordSheet.swift in Sources */,
+				E10000001000000000000019 /* FoodRecordSheet.swift in Sources */,
+				E10000001000000000000020 /* SleepRecordSheet.swift in Sources */,
+				E10000001000000000000021 /* DiaperRecordSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

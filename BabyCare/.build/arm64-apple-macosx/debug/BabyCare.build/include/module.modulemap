@@ -1,0 +1,3 @@
+module BabyCare {
+    header "/Users/xxd/dev/workspace/babycare-ios/BabyCare/.build/arm64-apple-macosx/debug/BabyCare.build/include/BabyCare-Swift.h"
+}

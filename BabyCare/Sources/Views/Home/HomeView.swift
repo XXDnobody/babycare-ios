@@ -14,7 +14,8 @@ struct HomeView: View {
     @State private var showPhotoAlbum = false
     @State private var showQuickMilk = false
     @State private var showQuickFood = false
-    @State private var showQuickNap = false
+    @State private var showQuickSleep = false
+    @State private var showQuickDiaper = false
     
     var body: some View {
         NavigationStack {
@@ -44,13 +45,16 @@ struct HomeView: View {
             ReportUploadView()
         }
         .sheet(isPresented: $showQuickMilk) {
-            QuickRecordSheet(taskType: .milk)
+            MilkRecordSheet()
         }
         .sheet(isPresented: $showQuickFood) {
-            QuickRecordSheet(taskType: .food)
+            FoodRecordSheet()
         }
-        .sheet(isPresented: $showQuickNap) {
-            QuickRecordSheet(taskType: .nap)
+        .sheet(isPresented: $showQuickSleep) {
+            SleepRecordSheet()
+        }
+        .sheet(isPresented: $showQuickDiaper) {
+            DiaperRecordSheet()
         }
     }
     
@@ -140,17 +144,17 @@ struct HomeView: View {
                 QuickActionButton(emoji: "🥣", title: "辅食") {
                     showQuickFood = true
                 }
-                QuickActionButton(emoji: "😴", title: "小睡") {
-                    showQuickNap = true
+                QuickActionButton(emoji: "😴", title: "睡眠") {
+                    showQuickSleep = true
+                }
+                QuickActionButton(emoji: "🧷", title: "换尿布") {
+                    showQuickDiaper = true
                 }
                 QuickActionButton(emoji: "📋", title: "报告") {
                     showAddReport = true
                 }
-                QuickActionButton(emoji: "📈", title: "评测") {
+                QuickActionButton(emoji: "📈", title: "评测", isVIP: true) {
                     showAssessment = true
-                }
-                QuickActionButton(emoji: "📷", title: "相册") {
-                    showPhotoAlbum = true
                 }
             }
         }
@@ -250,78 +254,6 @@ struct SummaryItem: View {
         .background(Color.white)
         .cornerRadius(AppCornerRadius.md)
         .cardShadow()
-    }
-}
-
-// MARK: - Quick Record Sheet
-struct QuickRecordSheet: View {
-    let taskType: ScheduleTask.TaskType
-    @Environment(\.dismiss) var dismiss
-    @State private var value: Double = 180
-    @State private var notes: String = ""
-    
-    var body: some View {
-        NavigationStack {
-            VStack(spacing: AppSpacing.lg) {
-                Text(taskType.emoji)
-                    .font(.system(size: 60))
-                    .padding(.top, AppSpacing.xl)
-                
-                Text("记录\(taskType.displayName)")
-                    .font(AppFont.h2())
-                
-                // Value Input
-                VStack(spacing: AppSpacing.sm) {
-                    Text("\(Int(value)) \(taskType.unit)")
-                        .font(AppFont.h1())
-                        .foregroundColor(.primaryPink)
-                    
-                    Slider(value: $value, in: sliderRange, step: sliderStep)
-                        .tint(.primaryPink)
-                        .padding(.horizontal, AppSpacing.xl)
-                }
-                
-                // Notes
-                TextField("添加备注...", text: $notes)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.horizontal, AppSpacing.lg)
-                
-                Spacer()
-                
-                Button("完成打卡") {
-                    // Save record
-                    dismiss()
-                }
-                .buttonStyle(PrimaryButtonStyle())
-                .padding(.horizontal, AppSpacing.lg)
-                .padding(.bottom, AppSpacing.xl)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("取消") {
-                        dismiss()
-                    }
-                    .foregroundColor(.textSecondary)
-                }
-            }
-        }
-    }
-    
-    private var sliderRange: ClosedRange<Double> {
-        switch taskType {
-        case .milk: return 30...300
-        case .food: return 1...5
-        case .nap, .exercise, .play: return 5...180
-        }
-    }
-    
-    private var sliderStep: Double {
-        switch taskType {
-        case .milk: return 10
-        case .food: return 1
-        case .nap, .exercise, .play: return 5
-        }
     }
 }
 
