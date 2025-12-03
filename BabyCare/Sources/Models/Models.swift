@@ -44,6 +44,7 @@ struct Baby: Identifiable, Codable {
     
     // 计算月龄
     var ageInDays: Int {
+        // 不包含起始日
         Calendar.current.dateComponents([.day], from: birthDate, to: Date()).day ?? 0
     }
     
@@ -52,10 +53,40 @@ struct Baby: Identifiable, Codable {
     }
     
     var ageDescription: String {
-        let months = ageInMonths
-        let days = ageInDays % 30
+        let calendar = Calendar.current
+        
+        // 获取出生日期的年月日
+        let birthComponents = calendar.dateComponents([.year, .month, .day], from: birthDate)
+        let todayComponents = calendar.dateComponents([.year, .month, .day], from: Date())
+        
+        guard let birthYear = birthComponents.year,
+              let birthMonth = birthComponents.month,
+              let birthDay = birthComponents.day,
+              let todayYear = todayComponents.year,
+              let todayMonth = todayComponents.month,
+              let todayDay = todayComponents.day else {
+            return "0天"
+        }
+        
+        // 计算月数和天数（不包含起始日，从第二天开始算）
+        var months = (todayYear - birthYear) * 12 + (todayMonth - birthMonth)
+        var days = todayDay - birthDay  // 不加1，不包含起始日
+        
+        // 如果天数为负数，需要从上个月借天数
+        if days < 0 {
+            months -= 1
+            // 获取上个月的天数
+            let previousMonth = calendar.date(byAdding: .month, value: -1, to: Date()) ?? Date()
+            let daysInPreviousMonth = calendar.range(of: .day, in: .month, for: previousMonth)?.count ?? 30
+            days += daysInPreviousMonth
+        }
+        
         if months > 0 {
-            return "\(months)月\(days)天"
+            if days > 0 {
+                return "\(months)月\(days)天"
+            } else {
+                return "\(months)月"
+            }
         } else {
             return "\(days)天"
         }

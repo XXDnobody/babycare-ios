@@ -13,6 +13,7 @@ struct AddBabyView: View {
     @Environment(\.dismiss) var dismiss
     
     var isFirstTime: Bool = false
+    var editingBaby: Baby? = nil  // 如果不为空，表示编辑模式
     
     @State private var nickname: String = ""
     @State private var birthDate: Date = Date()
@@ -24,6 +25,10 @@ struct AddBabyView: View {
     @State private var avatarImage: UIImage?
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    
+    private var isEditMode: Bool {
+        editingBaby != nil
+    }
     
     var body: some View {
         NavigationStack {
@@ -44,8 +49,11 @@ struct AddBabyView: View {
                 .padding(AppSpacing.md)
             }
             .background(Color.backgroundGray)
-            .navigationTitle("添加宝宝信息")
+            .navigationTitle(isEditMode ? "编辑宝宝信息" : "添加宝宝信息")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                loadEditingData()
+            }
             .toolbar {
                 if !isFirstTime {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -221,7 +229,7 @@ struct AddBabyView: View {
     // MARK: - Save Button
     private var saveButton: some View {
         Button(action: saveBaby) {
-            Text("保存")
+            Text(isEditMode ? "更新" : "保存")
         }
         .buttonStyle(PrimaryButtonStyle(isEnabled: !nickname.isEmpty))
         .disabled(nickname.isEmpty)
@@ -229,6 +237,21 @@ struct AddBabyView: View {
     }
     
     // MARK: - Actions
+    private func loadEditingData() {
+        guard let baby = editingBaby else { return }
+        
+        nickname = baby.nickname
+        birthDate = baby.birthDate
+        gender = baby.gender
+        height = baby.height != nil ? String(format: "%.1f", baby.height!) : ""
+        weight = baby.weight != nil ? String(format: "%.1f", baby.weight!) : ""
+        headCircumference = baby.headCircumference != nil ? String(format: "%.1f", baby.headCircumference!) : ""
+        
+        if let data = baby.avatarData, let image = UIImage(data: data) {
+            avatarImage = image
+        }
+    }
+    
     private func saveBaby() {
         guard !nickname.isEmpty else {
             alertMessage = "请输入宝宝昵称"
@@ -236,11 +259,27 @@ struct AddBabyView: View {
             return
         }
         
-        var baby = Baby(
-            nickname: nickname,
-            birthDate: birthDate,
-            gender: gender
-        )
+        var baby: Baby
+        
+        if let editingBaby = editingBaby {
+            // 编辑模式：保留原有ID和时间戳
+            baby = Baby(
+                id: editingBaby.id,
+                nickname: nickname,
+                birthDate: birthDate,
+                gender: gender,
+                avatarData: editingBaby.avatarData,
+                createdAt: editingBaby.createdAt,
+                updatedAt: Date()
+            )
+        } else {
+            // 新建模式
+            baby = Baby(
+                nickname: nickname,
+                birthDate: birthDate,
+                gender: gender
+            )
+        }
         
         if let h = Double(height) {
             baby.height = h
@@ -255,7 +294,11 @@ struct AddBabyView: View {
             baby.avatarData = data
         }
         
-        appState.addBaby(baby)
+        if isEditMode {
+            appState.updateBaby(baby)
+        } else {
+            appState.addBaby(baby)
+        }
         
         if isFirstTime {
             appState.completeOnboarding()

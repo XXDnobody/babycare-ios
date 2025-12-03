@@ -63,6 +63,27 @@ class AppState: ObservableObject {
         saveBabies()
     }
     
+    func updateBaby(_ baby: Baby) {
+        if let index = babies.firstIndex(where: { $0.id == baby.id }) {
+            babies[index] = baby
+            if currentBaby?.id == baby.id {
+                currentBaby = baby
+            }
+            saveBabies()
+        }
+    }
+    
+    func deleteBaby(_ baby: Baby) {
+        babies.removeAll { $0.id == baby.id }
+        
+        // 如果删除的是当前选中的宝宝，切换到第一个宝宝（如果有的话）
+        if currentBaby?.id == baby.id {
+            currentBaby = babies.first
+        }
+        
+        saveBabies()
+    }
+    
     func completeOnboarding() {
         isOnboardingCompleted = true
     }

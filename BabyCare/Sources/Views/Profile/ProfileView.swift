@@ -12,6 +12,9 @@ struct ProfileView: View {
     @State private var showAddBaby = false
     @State private var showReportHistory = false
     @State private var showSettings = false
+    @State private var editingBaby: Baby? = nil
+    @State private var babyToDelete: Baby? = nil
+    @State private var showDeleteAlert = false
     
     var body: some View {
         NavigationStack {
@@ -38,11 +41,27 @@ struct ProfileView: View {
         .sheet(isPresented: $showAddBaby) {
             AddBabyView(isFirstTime: false)
         }
+        .sheet(item: $editingBaby) { baby in
+            AddBabyView(isFirstTime: false, editingBaby: baby)
+        }
         .sheet(isPresented: $showReportHistory) {
             ReportHistoryView()
         }
         .sheet(isPresented: $showSettings) {
             SettingsView()
+        }
+        .alert("确认删除", isPresented: $showDeleteAlert) {
+            Button("取消", role: .cancel) { }
+            Button("删除", role: .destructive) {
+                if let baby = babyToDelete {
+                    appState.deleteBaby(baby)
+                    babyToDelete = nil
+                }
+            }
+        } message: {
+            if let baby = babyToDelete {
+                Text("确定要删除\"\(baby.nickname)\"的档案吗？此操作不可恢复。")
+            }
         }
     }
     
@@ -124,7 +143,15 @@ struct ProfileView: View {
                         baby: baby,
                         isSelected: baby.id == appState.currentBaby?.id
                     ) {
+                        // 点击后切换当前宝宝
                         appState.currentBaby = baby
+                    } onEdit: {
+                        // 点击编辑按钮
+                        editingBaby = baby
+                    } onDelete: {
+                        // 点击删除按钮
+                        babyToDelete = baby
+                        showDeleteAlert = true
                     }
                     
                     if baby.id != appState.babies.last?.id {
@@ -224,38 +251,66 @@ struct BabyListItem: View {
     let baby: Baby
     let isSelected: Bool
     let action: () -> Void
+    let onEdit: () -> Void
+    let onDelete: () -> Void
     
     var body: some View {
-        Button(action: action) {
-            HStack {
-                // Avatar
-                Circle()
-                    .fill(Color.primaryPinkBackground)
-                    .frame(width: 44, height: 44)
-                    .overlay(
-                        Text(baby.gender.emoji)
-                            .font(.system(size: 20))
-                    )
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(baby.nickname)
-                        .font(AppFont.bodyMedium())
-                        .foregroundColor(.textPrimary)
-                    Text("\(baby.ageDescription) · \(baby.gender.displayName)")
-                        .font(AppFont.caption())
-                        .foregroundColor(.textTertiary)
-                }
-                
-                Spacer()
-                
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.primaryPink)
+        HStack {
+            Button(action: action) {
+                HStack {
+                    // Avatar
+                    if let avatarData = baby.avatarData, let image = UIImage(data: avatarData) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 44, height: 44)
+                            .clipShape(Circle())
+                    } else {
+                        Circle()
+                            .fill(Color.primaryPinkBackground)
+                            .frame(width: 44, height: 44)
+                            .overlay(
+                                Text(baby.gender.emoji)
+                                    .font(.system(size: 20))
+                            )
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(baby.nickname)
+                            .font(AppFont.bodyMedium())
+                            .foregroundColor(.textPrimary)
+                        Text("\(baby.ageDescription) · \(baby.gender.displayName)")
+                            .font(AppFont.caption())
+                            .foregroundColor(.textTertiary)
+                    }
+                    
+                    Spacer()
+                    
+                    if isSelected {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.primaryPink)
+                    }
                 }
             }
-            .padding(AppSpacing.md)
+            .buttonStyle(PlainButtonStyle())
+            
+            HStack(spacing: AppSpacing.sm) {
+                Button(action: onEdit) {
+                    Image(systemName: "pencil.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(.accentBlue)
+                }
+                .buttonStyle(PlainButtonStyle())
+                
+                Button(action: onDelete) {
+                    Image(systemName: "trash.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundColor(.errorRed)
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
         }
-        .buttonStyle(PlainButtonStyle())
+        .padding(AppSpacing.md)
     }
 }
 
