@@ -15,6 +15,10 @@ struct Baby: Identifiable, Codable {
     var gender: Gender
     var avatarData: Data?
     
+    // 出生胎龄（用于早产儿矫正月龄）
+    var gestationalWeeks: Int?  // 胎龄周数
+    var gestationalDays: Int?   // 胎龄天数（0-6）
+    
     // 生长指标
     var height: Double?  // cm
     var weight: Double?  // kg
@@ -89,6 +93,61 @@ struct Baby: Identifiable, Codable {
             }
         } else {
             return "\(days)天"
+        }
+    }
+    
+    // 是否为早产儿（37周之前分娩）
+    var isPremature: Bool {
+        guard let weeks = gestationalWeeks else { return false }
+        return weeks < 37
+    }
+    
+    // 矫正月龄描述（用于早产儿）
+    var correctedAgeDescription: String? {
+        guard isPremature,
+              let gestationalWeeks = gestationalWeeks else {
+            return nil
+        }
+        
+        let gestationalDays = gestationalDays ?? 0
+        
+        // 计算需要矫正的天数（40周 - 实际胎龄）
+        let fullTermWeeks = 40
+        let weeksToCorrect = fullTermWeeks - gestationalWeeks
+        let daysToCorrect = (weeksToCorrect * 7) - gestationalDays
+        
+        // 从实际日龄中减去矫正天数
+        let actualDays = ageInDays
+        let correctedDays = actualDays - daysToCorrect
+        
+        if correctedDays <= 0 {
+            return "0天"
+        }
+        
+        // 转换为月和天
+        let correctedMonths = correctedDays / 30  // 简化计算
+        let remainingDays = correctedDays % 30
+        
+        if correctedMonths > 0 {
+            if remainingDays > 0 {
+                return "\(correctedMonths)月\(remainingDays)天"
+            } else {
+                return "\(correctedMonths)月"
+            }
+        } else {
+            return "\(correctedDays)天"
+        }
+    }
+    
+    // 胎龄描述
+    var gestationalAgeDescription: String? {
+        guard let weeks = gestationalWeeks else { return nil }
+        let days = gestationalDays ?? 0
+        
+        if days > 0 {
+            return "\(weeks)周\(days)天"
+        } else {
+            return "\(weeks)周"
         }
     }
 }

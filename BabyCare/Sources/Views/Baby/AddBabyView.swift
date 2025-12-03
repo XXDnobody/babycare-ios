@@ -18,6 +18,8 @@ struct AddBabyView: View {
     @State private var nickname: String = ""
     @State private var birthDate: Date = Date()
     @State private var gender: Baby.Gender = .male
+    @State private var gestationalWeeks: String = ""
+    @State private var gestationalDays: String = ""
     @State private var height: String = ""
     @State private var weight: String = ""
     @State private var headCircumference: String = ""
@@ -170,6 +172,42 @@ struct AddBabyView: View {
                         }
                     }
                 }
+                
+                // Gestational Age
+                VStack(alignment: .leading, spacing: AppSpacing.xs) {
+                    Text("出生胎龄 (选填)")
+                        .font(AppFont.bodySmall())
+                        .foregroundColor(.textSecondary)
+                    
+                    Text("37周之前分娩的宝宝可以矫正月龄后比对身高体重")
+                        .font(AppFont.caption())
+                        .foregroundColor(.textTertiary)
+                        .padding(.bottom, AppSpacing.xs)
+                    
+                    HStack(spacing: AppSpacing.md) {
+                        HStack(spacing: AppSpacing.xs) {
+                            TextField("40", text: $gestationalWeeks)
+                                .textFieldStyle(CustomTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .frame(width: 60)
+                            Text("周")
+                                .font(AppFont.bodyMedium())
+                                .foregroundColor(.textSecondary)
+                        }
+                        
+                        HStack(spacing: AppSpacing.xs) {
+                            TextField("0", text: $gestationalDays)
+                                .textFieldStyle(CustomTextFieldStyle())
+                                .keyboardType(.numberPad)
+                                .frame(width: 60)
+                            Text("天")
+                                .font(AppFont.bodyMedium())
+                                .foregroundColor(.textSecondary)
+                        }
+                        
+                        Spacer()
+                    }
+                }
             }
             .padding(AppSpacing.md)
             .background(Color.white)
@@ -243,6 +281,8 @@ struct AddBabyView: View {
         nickname = baby.nickname
         birthDate = baby.birthDate
         gender = baby.gender
+        gestationalWeeks = baby.gestationalWeeks != nil ? "\(baby.gestationalWeeks!)" : ""
+        gestationalDays = baby.gestationalDays != nil ? "\(baby.gestationalDays!)" : ""
         height = baby.height != nil ? String(format: "%.1f", baby.height!) : ""
         weight = baby.weight != nil ? String(format: "%.1f", baby.weight!) : ""
         headCircumference = baby.headCircumference != nil ? String(format: "%.1f", baby.headCircumference!) : ""
@@ -255,6 +295,13 @@ struct AddBabyView: View {
     private func saveBaby() {
         guard !nickname.isEmpty else {
             alertMessage = "请输入宝宝昵称"
+            showingAlert = true
+            return
+        }
+        
+        // 验证胎龄天数是否合理 (0-6)
+        if !gestationalDays.isEmpty, let days = Int(gestationalDays), days > 6 {
+            alertMessage = "胎龄天数必须在0-6之间"
             showingAlert = true
             return
         }
@@ -279,6 +326,12 @@ struct AddBabyView: View {
                 birthDate: birthDate,
                 gender: gender
             )
+        }
+        
+        // 设置胎龄
+        if let weeks = Int(gestationalWeeks), weeks > 0 {
+            baby.gestationalWeeks = weeks
+            baby.gestationalDays = Int(gestationalDays) ?? 0
         }
         
         if let h = Double(height) {
